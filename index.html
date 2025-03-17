@@ -3,22 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Moving Points</title>
+  <title>kkovati.github.io</title>
   <style>
     body {
       margin: 0;
       overflow: hidden;
       background: #000;
+      position: relative;
     }
     canvas {
       display: block;
+    }
+    .background-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+	  font-family: "Lucida Console", Monaco, monospace;
+      font-size: 5vw;
+      font-weight: bold;
+      color: rgba(255, 255, 255, 0.1);
+      pointer-events: none;
+      white-space: nowrap;
+    }
+    .background-text a {
+      color: rgba(255, 255, 255, 0.3);
+      text-decoration: none;
+      pointer-events: auto;
     }
   </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body>
   <canvas id="canvas"></canvas>
-
+  <div class="background-text">
+    <a href="https://github.com/kkovati" target="_blank">kkovati's GitHub profile</a>
+  </div>
   <script>
     const canvas = document.getElementById("canvas");
     const ctx = canvas.getContext("2d");
@@ -26,7 +46,7 @@
     canvas.height = window.innerHeight;
 
     const points = [];
-    const numPoints = 20;
+    const numPoints = 100;
 
     // Generate random points
     for (let i = 0; i < numPoints; i++) {
